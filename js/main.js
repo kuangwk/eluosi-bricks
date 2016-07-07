@@ -1,7 +1,7 @@
 let B = require('./brick');
 let $ctn = $('#container');
 let b = new B($ctn, 12, 10, 30);
-var inv = setInterval( ()=> {
+
+$ctn.swipeDown(function() {
     b.down();
-}, 1000);
-window.i = inv;
+})
