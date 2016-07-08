@@ -11,7 +11,9 @@ define('js/main', function(require, exports, module) {
       e.preventDefault();
   }
   
-  // $('body').on('touchmove', prevent)
+  $('body').on('touchmove', function(e) {
+      e.preventDefault();
+  })
   
   let b = new Block($ctn);
   $ctn.swipeDown((e)=>{
@@ -20,7 +22,7 @@ define('js/main', function(require, exports, module) {
       .swipeUp((e)=>{prevent(e); b.up()})
       .swipeLeft((e)=>{prevent(e); b.left()})   
       .swipeRight((e)=>{prevent(e); b.right()})
-      .on('click singleTap dblclick', prevent);
+      .on('click singleTap dblclick', prevent)
   
 
 });
