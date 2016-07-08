@@ -1,13 +1,22 @@
 define('js/brick', function(require, exports, module) {
 
+  function guid(arguments) {
+      function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+      }
+      return 'b_' + s4() + (+new Date());
+  }
+  
   class Bricks  {
-      constructor($ctn=$('body'), x=0, y=0, size=10) {
+      constructor($ctn=$('body'), x=0, y=0, size=30) {
           this.x = x
           this.y = y
           this.size = size
           this.$ctn = $ctn
-          this.id = 'b_' + (+new Date());
-          this.append();
+          this.id = guid()
+          this.append()
       }
       append() {
           let tpl = this.getTpl();
