@@ -1,3 +1,4 @@
+var releaseUrl = '/eluosi-bricks/dist/'
 // 启用 es6-babel 插件，解析 .es6 后缀为 .js
 fis.match('*.es6', {
   rExt: '.js',
@@ -14,3 +15,14 @@ fis.match('*.{png,js,css}', {
 fis.match('::package', {
   postpackager: fis.plugin('loader', {})
 });
+
+fis.media('dist')
+    .match('*.{png,js,css}', {
+        release: 'static/$0',
+        url: releaseUrl + 'static/$0'
+    })
+    .match('**', {
+        deploy: fis.plugin('local-deliver', {
+            to: './dist'
+        })
+    });
