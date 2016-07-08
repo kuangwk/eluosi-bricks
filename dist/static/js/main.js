@@ -4,6 +4,8 @@ define('js/main', function(require, exports, module) {
   let $ctn = $('#container');
   let b = new B($ctn, 12, 10, 30);
   
+  $('body').on('touchmove', function (event) {event.preventDefault();});
+  
   function prevent(e) {
       e.stopPropagation();
       e.preventDefault();
