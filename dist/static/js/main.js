@@ -10,9 +10,9 @@ define('js/main', function(require, exports, module) {
   }
   
   
-  $ctn.swipeDown((e)=>{prevent();b.down()})
-      .swipeUp((e)=>{prevnt(); b.up()})
-      .swipeLeft((e)=>{prevnt(); b.left()})   
-      .swipeRight((e)=>{prevnt(); b.right()})
+  $ctn.swipeDown((e)=>{prevent(e);b.down()})
+      .swipeUp((e)=>{prevent(e); b.up()})
+      .swipeLeft((e)=>{prevent(e); b.left()})   
+      .swipeRight((e)=>{prevent(e); b.right()})
 
 });
